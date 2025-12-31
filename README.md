@@ -46,6 +46,42 @@ With Terraform, we can create and manage cloud resources such as:
 - Terraform tool is written in **Go language**
 - Follows **DRY principle (Don’t Repeat Yourself)**
 
+- 
+## Types of Infrastructure as Code Tools
+## 1. Configuration Management Tools
+
+Examples: Ansible, Puppet, SaltStack
+
+Used when a server already exists
+
+Helps install and manage software on that server
+
+## 2. Server Templating Tools
+
+Examples: Packer, Docker
+
+Used to create pre-configured server images
+
+OS and required software are already installed
+
+Helps reuse the same image multiple times
+
+## 3. Provisioning Tools
+
+Examples: Terraform, AWS CloudFormation
+
+Used to create cloud resources such as:
+
+Servers
+
+Databases
+
+Networks
+
+Storage
+
+Terraform supports multiple cloud providers, while AWS CloudFormation works only with AWS.
+
 ---
 
 ## Terraform Providers
@@ -78,41 +114,3 @@ Name → Logical name used inside Terraform
 Arguments → Resource details (AMI, instance type, tags)
 
 
-
-
-
-
-Types of Infrastructure as Code Tools
-1. Configuration Management Tools
-
-Examples: Ansible, Puppet, SaltStack
-
-Used when a server already exists
-
-Helps install and manage software on that server
-
-2. Server Templating Tools
-
-Examples: Packer, Docker
-
-Used to create pre-configured server images
-
-OS and required software are already installed
-
-Helps reuse the same image multiple times
-
-3. Provisioning Tools
-
-Examples: Terraform, AWS CloudFormation
-
-Used to create cloud resources such as:
-
-Servers
-
-Databases
-
-Networks
-
-Storage
-
-Terraform supports multiple cloud providers, while AWS CloudFormation works only with AWS.

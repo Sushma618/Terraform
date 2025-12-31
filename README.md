@@ -39,7 +39,7 @@ With Terraform, we can create and manage cloud resources such as:
 
 ---
 
-## Terraform Basics (Required)
+## Terraform intro:
 - Created by **Mitchell Hashimoto** in **2014**
 - Uses **declarative approach** (define what we want)
 - Uses **HCL (HashiCorp Configuration Language)**

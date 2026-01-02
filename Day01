@@ -1,100 +1,39 @@
-Here you go 👍
-**Single file – clean, simple, copy-paste ready for Day 2 Terraform commands repo**
-
----
-
-## Day 2 – Terraform Core Commands 🚀
-
-#terraform #devops #learning
-
-### Terraform init
-
-Prepares the working directory for Terraform.
-
-**Command:**
-
-```bash
+Terraform Core Commands:
 terraform init
-```
+Initializes the Terraform project by downloading providers and setting up state.
 
-**What it does:**
-
-* Downloads required provider plugins (AWS / Azure / GCP)
-* Initializes backend for state storage
-
----
-
-### Terraform plan
-
-Shows what Terraform will do before making changes.
-
-**Command:**
-
-```bash
 terraform plan
-```
+Shows what changes Terraform will make before applying them.
 
-**What it does:**
-
-* Compares desired state (`.tf` files) with current state (`.tfstate`)
-* Helps review changes safely before applying
-
----
-
-### Terraform apply
-
-Creates or updates infrastructure.
-
-**Command:**
-
-```bash
 terraform apply
-```
+Creates or updates infrastructure based on the Terraform files.
 
-**What it does:**
-
-* Executes the planned changes
-* Calls cloud provider APIs through providers
-* Creates or updates the Terraform state file
-
----
-
-### Terraform destroy
-
-Deletes infrastructure managed by Terraform.
-
-**Command:**
-
-```bash
 terraform destroy
-```
+Deletes all infrastructure managed by Terraform.
 
-**What it does:**
 
-* Removes all Terraform-managed resources
-* Mostly used in dev or test environments
-
----
-
-### Terraform RPC (Remote Procedure Call)
-
-Terraform does not directly create cloud resources.
-It communicates with cloud providers using RPC.
-
-**Flow:**
-Terraform CLI → Provider Plugin → Cloud APIs
-
-This is how Terraform manages resources behind the scenes.
-
----
-
-### Quick Summary
-
-```text
-terraform init     → setup project
+terraform init     → setup Terraform
 terraform plan     → preview changes
 terraform apply    → create/update infra
-terraform destroy  → delete infra
-```
+terraform destroy  → remove infra
 
----
+
+RPC (Remote Procedure Call)
+Used by Terraform to communicate with provider plugins.
+
+Terraform sends requests to providers using RPC, and providers perform actions on cloud resources.
+
+RPC → Terraform talks to cloud providers via plugins
+
+Terraform CLI
+     │
+     ▼
+Provider Plugin (RPC)
+     │
+     ▼
+Cloud Provider API
+     │
+     ▼
+Infrastructure (EC2, VPC, S3, etc.)
+Terraform uses RPC to talk to provider plugins, which call cloud APIs to manage infrastructure.
+
